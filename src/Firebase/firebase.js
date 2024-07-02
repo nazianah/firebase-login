@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTbnFT499onBueWNtkuy_SF2lOXZ1HTOI",
-  authDomain: "register-cd2cc.firebaseapp.com",
-  projectId: "register-cd2cc",
-  storageBucket: "register-cd2cc.appspot.com",
-  messagingSenderId: "430953567589",
-  appId: "1:430953567589:web:e39034cce3af92046afd8c"
+  apiKey: "AIzaSyDUfoChnLTK4NPY931Q460Z1XhXyK7IF_w",
+  authDomain: "fir-login-b1df3.firebaseapp.com",
+  projectId: "fir-login-b1df3",
+  storageBucket: "fir-login-b1df3.appspot.com",
+  messagingSenderId: "1097017017924",
+  appId: "1:1097017017924:web:db519f9d1874dc20461e11",
+  measurementId: "G-FBHK0KW93H"
 };
 
 const app = initializeApp(firebaseConfig);
