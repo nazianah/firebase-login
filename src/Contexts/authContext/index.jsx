@@ -23,24 +23,41 @@ export function AuthProvider({ children }) {
 
   async function initializeUser(user) {
     if (user) {
-      setCurrentUser({...user });
+
+      setCurrentUser({ ...user });
+
+      // check if provider is email and password login
+      const isEmail = user.providerData.some(
+        (provider) => provider.providerId === "password"
+      );
+      setIsEmailUser(isEmail);
+
+      // check if the auth provider is google or not
+    //   const isGoogle = user.providerData.some(
+    //     (provider) => provider.providerId === GoogleAuthProvider.PROVIDER_ID
+    //   );
+    //   setIsGoogleUser(isGoogle);
+
       setUserLoggedIn(true);
-    }
-    else{
+    } else {
       setCurrentUser(null);
       setUserLoggedIn(false);
     }
+
     setLoading(false);
   }
-  const value ={
-    currentUser,
+
+  const value = {
     userLoggedIn,
-    loading
-  }
-  return(
+    isEmailUser,
+    isGoogleUser,
+    currentUser,
+    setCurrentUser
+  };
+
+  return (
     <AuthContext.Provider value={value}>
-        {!loading && children}
-    {/* return component with the value prop set to this value object */}
+      {!loading && children}
     </AuthContext.Provider>
-  )
+  );
 }
